@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "71fe5494-99b2-4992-80e0-ae636ee64b24",
+		"name": "SC1: registration wallet credit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28975247",
+		"_collection_link": "https://blue-equinox-580131.postman.co/workspace/otustest~cdb3636e-857b-4491-a072-3c16c5c1baaf/collection/28975247-71fe5494-99b2-4992-80e0-ae636ee64b24?action=share&source=collection_link&creator=28975247"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"username\", pm.response.json().username);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"{{rs1}}\",\r\n  \"password\": \"newpassword\",\r\n  \"firstName\": \"{{rs2}}\",\r\n  \"lastName\": \"{{rs3}}\",\r\n  \"email\": \"{{rs4}}\",\r\n  \"phone\": \"+7904*******\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/auth/register",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loginUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"password\": \"newpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/auth/login",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get token list",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/token/get?clientId={{username}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"token",
+						"get"
+					],
+					"query": [
+						{
+							"key": "clientId",
+							"value": "{{username}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "adjust token list",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"pm.collectionVariables.set(\"orderId\", randomString1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {        \r\n        \"tokenType\": \"Bank card\",        \r\n        \"accountBalance\": 0.0,\r\n        \"description\": \"Yet another bank card\",\r\n        \"externalTokenId\": \"5555666677778888\"\r\n    }\r\n\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/token/adjust",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"token",
+						"adjust"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pay credit",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"pm.collectionVariables.set(\"orderid\", randomString1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"paymentid\", pm.response.json().paymentRequestId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"clientId\": \"{{username}}\",\r\n    \"orderId\": \"{{orderid}}\",\r\n    \"clientToken\": \r\n    {\r\n      \"tokenType\": \"Bank card\",\r\n      \"externalTokenId\": \"5555666677778888\"\r\n    },\r\n    \"amount\": 11209.34,    \r\n    \"paymentGoal\": \"Wallet Credit\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/order/pay",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"order",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pay advice",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"pm.collectionVariables.set(\"orderId\", randomString1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"amount\": 11209.34,    \r\n    \"internalPaymentId\": {{paymentid}},\r\n    \"orderId\": \"{{orderid}}\",\r\n    \"paymentResult\": \"Success\",\r\n    \"tokenType\": \"Bank card\",\r\n    \"externalTokenId\": \"5555666677778888\",\r\n    \"externalPaymentId\": \"extPaymentId_223\"       \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/order/payresult",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"order",
+						"payresult"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get token list",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/token/get?clientId={{username}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"token",
+						"get"
+					],
+					"query": [
+						{
+							"key": "clientId",
+							"value": "{{username}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get operations by token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/token/getrequest?externalTokenId=5555666677778888&tokenType=BANK_CARD",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"token",
+						"getrequest"
+					],
+					"query": [
+						{
+							"key": "externalTokenId",
+							"value": "5555666677778888"
+						},
+						{
+							"key": "tokenType",
+							"value": "BANK_CARD"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get operations by order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/order/getrequest?orderId={{orderid}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"order",
+						"getrequest"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "{{orderid}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "orderId",
+			"value": ""
+		},
+		{
+			"key": "orderid",
+			"value": ""
+		}
+	]
+}

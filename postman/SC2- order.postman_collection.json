@@ -1,0 +1,1096 @@
+{
+	"info": {
+		"_postman_id": "ae653d6d-7ee8-4b14-888d-87037ff744e2",
+		"name": "SC2: order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28975247",
+		"_collection_link": "https://blue-equinox-580131.postman.co/workspace/otustest~cdb3636e-857b-4491-a072-3c16c5c1baaf/collection/28975247-ae653d6d-7ee8-4b14-888d-87037ff744e2?action=share&source=collection_link&creator=28975247"
+	},
+	"item": [
+		{
+			"name": "loginUser",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"password\": \"newpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/auth/login",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get store position beer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/store/storeposition/get?productId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"store",
+						"storeposition",
+						"get"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get store position fish",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/store/storeposition/get?productId=2",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"store",
+						"storeposition",
+						"get"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get store position chips",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/store/storeposition/get?productId=3",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"store",
+						"storeposition",
+						"get"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get token list",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/token/get?clientId={{username}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"token",
+						"get"
+					],
+					"query": [
+						{
+							"key": "clientId",
+							"value": "{{username}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"pm.environment.set(\"orderId2\", randomString1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"orderId2\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{orderId2}}\",\r\n    \"status\": \"NEW\",\r\n    \"orderItems\": [\r\n        {         \r\n            \"product\": {\r\n                \"id\": 1          \r\n            },\r\n            \"quantity\": 5\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/order/place",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"order",
+						"place"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add orderItem for order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"versionId\", pm.response.json().version);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{orderId2}}\",\r\n    \"version\": {{versionId}},\r\n    \"status\": \"NEW\",\r\n    \"orderItems\": [\r\n        { \r\n           \"product\": {\r\n                \"id\": 1          \r\n            },\r\n            \"quantity\": 5\r\n        },\r\n        {            \r\n            \"product\": {\r\n                \"id\": 2\r\n            },\r\n            \"quantity\": 22\r\n        }\r\n\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/order/adjust",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"order",
+						"adjust"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get delivery pickup points",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/delivery/pickup/get",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"delivery",
+						"pickup",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get delivery pickup filtered",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/delivery/pickup/get?addressFilter=Yaros",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"delivery",
+						"pickup",
+						"get"
+					],
+					"query": [
+						{
+							"key": "addressFilter",
+							"value": "Yaros"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get delivery home options",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/delivery/option/get?address=Yaroslavl, Pushkina 12/22",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"delivery",
+						"option",
+						"get"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "Yaroslavl, Pushkina 12/22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add delivery for order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"versionId\", pm.response.json().version);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{orderId2}}\",\r\n    \"version\": {{versionId}},\r\n    \"status\": \"NEW\",\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": {\r\n                \"id\": 1\r\n            },\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"product\": {\r\n                \"id\": 2\r\n            },\r\n            \"quantity\": 22\r\n        }\r\n    ],\r\n    \"delivery\": {\r\n        \"homeDelivery\": {\r\n            \"companyName\": \"SDEK\",\r\n            \"cost\": 718.67,\r\n            \"address\": \"Yaroslavl, Pushkina 12/22\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/order/adjust",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"order",
+						"adjust"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pay",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"pm.collectionVariables.set(\"orderid\", randomString1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"paymentid\", pm.response.json().paymentRequestId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{    \r\n    \"clientId\": \"{{username}}\",\r\n    \"orderId\": \"{{orderId2}}\",\r\n    \"clientToken\": \r\n    {\r\n      \"tokenType\": \"Wallet\"      \r\n    },\r\n    \"amount\": 7657.18,    \r\n    \"paymentGoal\": \"Order\"    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/order/pay",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"order",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get token list",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/token/get?clientId={{username}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"token",
+						"get"
+					],
+					"query": [
+						{
+							"key": "clientId",
+							"value": "{{username}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set order paid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"versionId\", pm.response.json().version);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{orderId2}}\",\r\n    \"version\": {{versionId}},\r\n    \"status\": \"PAID\",\r\n    \"orderItems\": [\r\n        {\r\n            \"product\": {\r\n                \"id\": 1\r\n            },\r\n            \"quantity\": 5\r\n        },\r\n        {\r\n            \"product\": {\r\n                \"id\": 2\r\n            },\r\n            \"quantity\": 22\r\n        }\r\n    ],\r\n    \"delivery\": {\r\n        \"homeDelivery\": {\r\n            \"companyName\": \"SDEK\",\r\n            \"cost\": 7185.67,\r\n            \"address\": \"Yaroslavl, Pushkina 12/22\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/order/adjust",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"order",
+						"adjust"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get operations by token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/token/getrequest?tokenType=WALLET",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"token",
+						"getrequest"
+					],
+					"query": [
+						{
+							"key": "tokenType",
+							"value": "WALLET"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get operations by order",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/payment/order/getrequest?orderId={{orderId2}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"payment",
+						"order",
+						"getrequest"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "{{orderId2}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "process order",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"versionId\", pm.response.json().version);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"{{orderId2}}\",\r\n    \"version\": {{versionId}},\r\n    \"status\": \"PAID\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/order/process",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"order",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get store position beer",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/store/storeposition/get?productId=1",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"store",
+						"storeposition",
+						"get"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get store position fish",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var randomString1 = Math.random().toString(36).substring(7);\r",
+							"var randomString2 = Math.random().toString(36).substring(7);\r",
+							"var randomString3 = Math.random().toString(36).substring(7);\r",
+							"var randomString4 = Math.random().toString(36).substring(7);\r",
+							"pm.variables.set(\"rs1\", randomString1);\r",
+							"pm.variables.set(\"rs2\", randomString2);\r",
+							"pm.variables.set(\"rs3\", randomString3);\r",
+							"pm.variables.set(\"rs4\", randomString1+\"@mail.ru\");\r",
+							"\r",
+							"     "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/store/storeposition/get?productId=2",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"store",
+						"storeposition",
+						"get"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get order completed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.environment.set(\"versionId\", pm.response.json().version);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://arch.homework/aboldyrev/order/get?orderId={{orderId2}}",
+					"protocol": "http",
+					"host": [
+						"arch",
+						"homework"
+					],
+					"path": [
+						"aboldyrev",
+						"order",
+						"get"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "{{orderId2}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "orderId",
+			"value": ""
+		},
+		{
+			"key": "orderid",
+			"value": ""
+		},
+		{
+			"key": "orderId2",
+			"value": ""
+		}
+	]
+}
