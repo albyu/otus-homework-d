@@ -1,0 +1,78 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: {{ include "orchestra.fullname" . }}-configmap
+data:
+  application.yml: |
+    server:
+      port: {{.Values.orchestra.service.port}}
+      shutdown: graceful
+    spring:
+      rabbitmq:
+        host: {{.Values.rabbitmq.service}}
+        port: {{.Values.rabbitmq.port}}
+        username: ${RABBITMQ_USER}
+        password: ${RABBITMQ_PASSWORD}
+      datasource:
+        url: ${POSTGRES_URL}
+        username: ${POSTGRES_APP_USER}
+        password: ${POSTGRES_APP_PASSWORD}
+        driver-class-name: org.postgresql.Driver
+      jpa:
+        hibernate:
+          ddl-auto: update
+      mvc:
+        pathmatch:
+          matching-strategy: ant_path_matcher
+    springfox:
+      documentation:
+        swagger-ui:
+          base-url: /orchestra-doc
+        swagger:
+          v2:
+            path: /orchestra-doc/v2/api-docs
+    management:
+      endpoint:
+        metrics:
+          enabled: true
+      endpoints:
+        web:
+          exposure:
+            include: health, info, prometheus
+      metrics:
+        export:
+          prometheus:
+            enabled: true  
+    application:
+      role: {{ include "orchestra.fullname" . }}
+      rabbitmq:
+        orderreq:
+          queueName: {{.Values.rabbitmq.orderreq.queueName}}
+          exchangeName: {{.Values.rabbitmq.orderreq.exchangeName}}
+        orderres:
+          queueName: {{.Values.rabbitmq.orderres.queueName}}
+          exchangeName: {{.Values.rabbitmq.orderres.exchangeName}}
+        orderentity:
+          queueName: {{.Values.rabbitmq.orderentity.queueName}}
+          exchangeName: {{.Values.rabbitmq.orderentity.exchangeName}}
+        delivery:
+          queueName: {{.Values.rabbitmq.delivery.queueName}}
+          exchangeName: {{.Values.rabbitmq.delivery.exchangeName}}
+        confirmreq:
+          paymentQueueName: {{.Values.rabbitmq.confirmreq.paymentQueueName}}
+          storeQueueName: {{.Values.rabbitmq.confirmreq.storeQueueName}}
+          deliveryQueueName: {{.Values.rabbitmq.confirmreq.deliveryQueueName}}
+          exchangeName: {{.Values.rabbitmq.confirmreq.exchangeName}}
+        confirmres:
+          queueName: {{.Values.rabbitmq.confirmres.queueName}}
+          exchangeName: {{.Values.rabbitmq.confirmres.exchangeName}}
+        account:
+          queueName: {{.Values.rabbitmq.account.queueName}}
+          exchangeName: {{.Values.rabbitmq.account.exchangeName}}
+        notification:
+          accQueueName: {{.Values.rabbitmq.notification.accQueueName}}
+          authQueueName: {{.Values.rabbitmq.notification.authQueueName}}
+          deliveryQueueName: {{.Values.rabbitmq.notification.deliveryQueueName}}
+          orchestraQueueName: {{.Values.rabbitmq.notification.orchestraQueueName}}
+          exchangeName: {{.Values.rabbitmq.notification.exchangeName}}
+ 

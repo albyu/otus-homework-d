@@ -1,0 +1,12 @@
+redisAddress: 'redis://auth-redis-master:6379'
+auth:
+  enabled: true
+  redisPassword: 'redispass'
+serviceMonitor:
+  enabled: false
+  interval: 30s
+  telemetryPath: /metrics
+  labels:
+    team: otus
+
+  

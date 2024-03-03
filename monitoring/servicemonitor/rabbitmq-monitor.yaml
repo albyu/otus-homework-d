@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: rabbitmq-monitor
+  # Change this to the namespace the Prometheus instance is running in
+  # namespace: default
+  labels:
+    app: rabbitmq
+    team: otus
+spec:
+  selector:
+    matchLabels:
+      app: rabbitmq # target gitlab service
+  endpoints:
+  - port: metrics   
+    path: /metrics
+    interval: 15s

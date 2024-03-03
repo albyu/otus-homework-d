@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: prometheus-redis-exporter
+    team: otus
+  name: prometheus-redis-exporter
+spec:
+  endpoints:
+  - interval: 30s
+    path: /metrics
+    port: http
+  jobLabel: prometheus-redis-exporter
+  namespaceSelector:
+    matchNames:
+    - learning
+  selector:
+    matchLabels:
+      app: prometheus-postgres-exporter

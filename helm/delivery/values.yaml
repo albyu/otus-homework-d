@@ -1,0 +1,59 @@
+delivery:
+  name: delivery
+  postgres:
+    appUsername: otususer
+    appPassword: otususer
+    appDatabase: otusdb
+    appDbUrl: jdbc:postgresql://postgres-service:5432/delivery_db
+  rabbitmq:
+    username: rabbitadmin
+    password: rabbitpassword
+  service:
+    port: &deliveryServicePort 8080
+    type: ClusterIP
+  ingress:
+    enabled: true
+    tls: false
+    rules:
+    - host: arch.homework
+      http:
+        paths:
+        - path: /aboldyrev/delivery($|/)(.*)
+          service:
+            port: *deliveryServicePort
+
+rabbitmq:
+  service: rabbitmq
+  port: 5672
+#
+  orderreq:
+    queueName: reqorders
+    exchangeName: reqordersexchange
+  orderres:
+    queueName: resorders
+    exchangeName: resordersexchange
+  orderentity:
+    queueName: entityorders
+    exchangeName: entityordersexchange
+  delivery:
+    queueName: reqdelivery
+    exchangeName: reqdeliveryex
+  confirmreq:
+    paymentQueueName: reqpaymentconfirms
+    storeQueueName: reqstoreconfirms
+    deliveryQueueName: reqdeliveryconfirms
+    exchangeName: reqconfirmexchange
+  confirmres:
+    queueName: resconfirms
+    exchangeName: resconfirmexchange
+  account:
+    queueName: reqaccount
+    exchangeName: reqaccountex
+  notification:
+    accQueueName: reqnotificationacc
+    authQueueName: reqnotificationauth
+    deliveryQueueName: reqnotificationdeli
+    orchestraQueueName: reqnotificationorch
+    exchangeName: reqnotificationex
+hosts:
+  authurl: 'http://auth-service:8080/check'

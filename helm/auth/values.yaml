@@ -1,0 +1,64 @@
+auth:
+  name: auth
+  postgres:
+    appUsername: otususer
+    appPassword: otususer
+    appDatabase: otusdb
+    appDbUrl: jdbc:postgresql://postgres-service:5432/auth_db
+  rabbitmq:
+    username: rabbitadmin
+    password: rabbitpassword
+  redis:
+    password: redispass
+    sessionTtl: 40
+  service:
+    port: &authServicePort 8080
+    type: ClusterIP
+  ingress:
+    enabled: true
+    tls: false
+    rules:
+    - host: arch.homework
+      http:
+        paths:
+        - path: /aboldyrev/auth($|/)(.*)
+          service:
+            port: *authServicePort
+        #- path: /register
+        #  service:
+        #    port: *authServicePort
+        #- path: /login
+        #  service:
+        #    port: *authServicePort
+        #- path: /logout
+        #  service:
+        #    port: *authServicePort
+rabbitmq:
+  service: rabbitmq
+  port: 5672
+#
+  account:
+    exchangeName: reqaccountex
+  notification:
+    exchangeName: reqnotificationex
+#
+redis:
+  host: auth-redis-master
+  port: 6379
+  enabled: true
+  master:
+    persistence:
+      storageClass: standard
+      size: 1Gi
+    service:
+      type: LoadBalancer
+  global:
+    redis:
+      password: redispass    
+  replica:
+    replicaCount: 1
+    persistence:
+      storageClass: standard
+      size: 1Gi
+    service:
+      type: ClusterIP

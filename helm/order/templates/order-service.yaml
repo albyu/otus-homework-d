@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "order.fullname" . }}-service
+  labels:
+    app: {{ include "order.fullname" . }} 
+spec:
+  selector:
+    app: {{ include "order.fullname" . }}
+  ports:
+    - protocol: TCP
+      name: web
+      port: {{.Values.order.service.port}}
+      targetPort: {{.Values.order.service.port}} 
+  type: {{.Values.order.service.type}} 

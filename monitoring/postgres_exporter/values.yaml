@@ -1,0 +1,18 @@
+serviceMonitor:
+  enabled: true
+  # Set labels for the ServiceMonitor, use this to define your scrape label for Prometheus Operator
+  labels:
+    team: otus
+  # Set timeout for scrape
+  interval: 30s
+  # Set path to cloudwatch-exporter telemtery-path
+  telemetryPath: /metrics
+
+
+config:
+  datasource:
+    # Specify one of both datasource or datasourceSecret
+    host: 'postgres-service'
+    user: otusadmin
+    password: otusadmin
+    port: "5432"

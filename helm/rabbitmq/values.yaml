@@ -1,0 +1,39 @@
+rabbitmq:
+  enabled: true
+  username: rabbitadmin
+  password: rabbitpassword
+  port: 5672
+  uiPort: 15672   
+  metricsPort: 15692
+  orderreq:
+    queueName: reqorders
+    exchangeName: reqordersexchange
+  orderres:
+    queueName: resorders
+    exchangeName: resordersexchange
+  orderentity:
+    queueName: entityorders
+    exchangeName: entityordersexchange
+  delivery:
+    queueName: reqdelivery
+    exchangeName: reqdeliveryex
+  confirmreq:
+    paymentQueueName: reqpaymentconfirms
+    storeQueueName: reqstoreconfirms	
+    deliveryQueueName: reqdeliveryconfirms
+    exchangeName: reqconfirmexchange
+  confirmres:
+    queueName: resconfirms
+    exchangeName: resconfirmexchange
+  account:
+    queueName: reqaccount
+    exchangeName: reqaccountex  
+  notification:
+    accQueueName: reqnotificationacc
+    authQueueName: reqnotificationauth
+    deliveryQueueName: reqnotificationdeli
+    orchestraQueueName: reqnotificationorch
+    exchangeName: reqnotificationex
+
+
+    
